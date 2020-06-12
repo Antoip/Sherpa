@@ -6,8 +6,7 @@ class Teachers::FlashcardsController < ApplicationController
     @materials = []
     @levels = []
     @user = current_user
-    @chapters = Chapter.includes([:flashcards])
-    @courses = Course.where("user_id = '#{@user.id}'").includes([:material, :division])
+    @courses = Course.where("user_id = '#{@user.id}'")
     @courses.each { |course| @materials << course.material && @levels << course.division.level}
 
     @levels = @levels.uniq

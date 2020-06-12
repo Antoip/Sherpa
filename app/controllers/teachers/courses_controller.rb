@@ -11,7 +11,7 @@ class Teachers::CoursesController < ApplicationController
 
     @course  = Course.find(params[:id])
     authorize current_user #([:teachers, @course])
-    @course_students = User.where("division_id = ?", @course.division.id).includes([:feedbacks, :division])
+    @course_students = User.where("division_id = ?", @course.division.id)
     @material = @course.material
 
     # Score for bar chart (per chapter + cumulative)
@@ -115,9 +115,9 @@ class Teachers::CoursesController < ApplicationController
 
     # Données pour les alerts dans le dash de la classe - Martin
 
-    @unread_flashcards_notifications = Notification.where(user_id: current_user.id).where(notif_type: "flashcards").where(read_status: false).includes([:course])
-    @unread_feeling_notifications    = Notification.where(user_id: current_user.id).where(notif_type: "feeling").where(read_status: false).includes([:course])
-    @unread_message_notifications    = Notification.where(user_id: current_user.id).where(notif_type: "message").where(read_status: false).includes([:course])
+    @unread_flashcards_notifications = Notification.where(user_id: current_user.id).where(notif_type: "flashcards").where(read_status: false)
+    @unread_feeling_notifications    = Notification.where(user_id: current_user.id).where(notif_type: "feeling").where(read_status: false)
+    @unread_message_notifications    = Notification.where(user_id: current_user.id).where(notif_type: "message").where(read_status: false)
 
     # Fin des données pour les alerts dash
   end

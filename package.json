@@ -2,27 +2,15 @@
   "name": "Sherpa",
   "private": true,
   "dependencies": {
-    "@babel/preset-react": "^7.10.1",
     "@rails/webpacker": "4.2.2",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
-    "history": "^4.10.1",
     "jquery": "^3.4.1",
     "markdown-it": "^10.0.0",
     "popper.js": "^1.16.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.2.0",
-    "redux": "^4.0.5",
-    "redux-form": "^8.3.6",
-    "redux-logger": "^3.0.6",
-    "redux-promise": "^0.6.0",
     "turndown": "^5.0.3"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.10.3"
   }
 }

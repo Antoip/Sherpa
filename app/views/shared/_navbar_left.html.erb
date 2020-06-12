@@ -1,24 +1,22 @@
-    <div class="navbar-left">
-        <%= link_to teachers_course_path(@course) do %>
-          <div class="btn-nav-left btn-actif" id="teacher-course">
-            <i class="fas fa-tachometer-alt navbar-icon"></i>
-          </div>
-        <% end %>
-        <%= link_to teachers_course_students_path(@course) do %>
-        <div class="btn-nav-left" id="teacher-student">
-          <i class="fas fa-graduation-cap navbar-icon"></i>
-        </div>
-        <% end %>
-        <%= link_to teachers_feedbacks_path(@course) do %>
-        <div class="btn-nav-left" id="teacher-reviews">
-          <i class="fas fa-star navbar-icon"></i>
-        </div>
-        <% end %>
-        <%= link_to forum_path(@course.forum) do %>
-        <div class="btn-nav-left" id="teacher-chat">
-          <i class="fas fa-comments navbar-icon"></i>
-        </div>
-        <% end %>
+<div class="row mr-0">
+  <div class="col-1">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-dashboard-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><div class="icon-box"><i class="fas fa-tachometer-alt navbar-icon"></i></div></a>
+      <a class="nav-link" id="v-pills-students-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fas fa-user-graduate navbar-icon"></i></a>
+      <a class="nav-link" id="v-pills-feedbacks-tab" data-toggle="pill" href="#v-pills-feedbacks" role="tab" aria-controls="v-pills-feebacks" aria-selected="false"><i class="fas fa-star navbar-icon"></i></a>
+      <a class="nav-link" id="v-pills-forum-tab" data-toggle="pill" href="#v-pills-forum" role="tab" aria-controls="v-pills-forum" aria-selected="false"><i class="fas fa-comments navbar-icon"></i></a>
+      <div class="slide-in"></div>
     </div>
+  </div>
+  <div class="col-11">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-dashboard-tab"><%= render 'teachers/courses/course_dashboard'%></div>
+      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"><%= render 'teachers/students/list'%></div>
+      <div class="tab-pane fade" id="v-pills-feedbacks" role="tabpanel" aria-labelledby="v-pills-feedbacks-tab"> <%= render 'reviews/teacher_reviews' %></div>
+      <div class="tab-pane fade" id="v-pills-forum" role="tabpanel" aria-labelledby="v-pills-forum-tab"><%= render 'forums/conversation'%></div>
+    </div>
+  </div>
+</div>
+
 
 
