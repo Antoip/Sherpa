@@ -8,7 +8,7 @@
         <% course.material.chapters.each do |chapter| %>
       <div class="row row-flashcards-chapter">
           <div class="material-card mb-4 p-3"><%= link_to chapter.name %></div>
-          <% chapter.flashcards.each do |flashcard| %>
+          <% @chapters.find(chapter.id).flashcards.each do |flashcard| %>
             <div class="flashcard-teacher mb-4 p-3 pt-5 no-show overflow-auto">
               <strong><%= flashcard.question %></strong>
               <div class="border-top mt-2 pt-3"><%= flashcard.answer %></div>

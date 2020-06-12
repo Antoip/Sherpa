@@ -1,6 +1,6 @@
 class ChaptersController < ApplicationController
   def new
-    @courses = Course.all
+    @courses = Course.includes(:chapter)
     @chapter = Chapter.new
   end
 

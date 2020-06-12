@@ -1,6 +1,7 @@
 class Notification < ApplicationRecord
   belongs_to :user
   belongs_to :course
+  delegate :division, to: :course
 
   NOTIFICATION_TYPES = ['flashcards', 'feeling', 'message', 'feedback']
 

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resources :students, only: [:index, :show]
     end
     resources :flashcards, only: [:index, :destroy, :update, :create]
+    resources :feedbacks, only: [:index]
   end
   resources :materials, only: [:index, :show]
   resources :chapters, only: [:new, :create, :edit, :update, :destroy] do

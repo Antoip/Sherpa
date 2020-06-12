@@ -3,7 +3,7 @@ class MaterialsController < ApplicationController
 
   def index
     @teacher = current_user
-    @courses = Course.where("user_id = '#{@teacher.id}'")
+    @courses = Course.where("user_id = '#{@teacher.id}'").includes([:material, :division])
     authorize @teacher
     policy_scope(Material)
     @chapter = Chapter.new
